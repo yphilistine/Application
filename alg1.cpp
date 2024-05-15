@@ -219,7 +219,11 @@ int main()
                 q.push_back(client);
             }
             if (skip != 1 && q.size() > n) {
-                q.pop_back(); id = 4;
+                q.pop_back();
+                for (auto it = in.begin(); it != in.end(); it++) {
+                    if (*it == client) { in.erase(it); break; }
+                }
+                cout << strt << " 11 " << client << endl;
             }
         }
         //id=4
